@@ -1,0 +1,10 @@
+.main {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 20px;
+}
+
+.appItem {
+  background-color: #00000033;
+  border-radius: 10px;
+}

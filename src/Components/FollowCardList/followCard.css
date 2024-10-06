@@ -1,0 +1,89 @@
+/*
+===========
+section
+===========
+*/
+
+:root {
+  font-family: monospace;
+}
+
+button {
+  padding: 5px 10px;
+  border-radius: 50px;
+  min-width: 4rem;
+  cursor: pointer;
+  font-size: 11px;
+}
+
+article {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-radius: 15px;
+  padding: 10px 0;
+}
+
+.sectionButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+}
+
+.followCardButton {
+  background-color: #33333300;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.followCardButton.is-following {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #fff;
+}
+
+.followCardButton.is-following:hover {
+  background-color: #8a1f1f;
+  color: #cf2c2c;
+  border: 1px solid #cf2c2c;
+}
+
+/*
+===========
+aside
+===========
+*/
+
+aside {
+  width: 175px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+aside div {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+}
+
+aside strong {
+  display: block;
+  color: #fff;
+  font-size: 15px;
+}
+
+aside span {
+  font-family: monospace;
+  font-size: 12px;
+  color: #c7c7c7;
+}
+
+img {
+  width: 40px;
+  border-radius: 50%;
+}
