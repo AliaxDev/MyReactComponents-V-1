@@ -1,0 +1,47 @@
+p,
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.playerTurn {
+  /*background-color: blueviolet;*/
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  padding: 10px;
+}
+
+.playerTurn p {
+  font-size: 20px;
+  animation: rotate 1s ease-in-out;
+}
+
+.containerPlayerTurn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.titlePlayerTurn {
+  font-family: monospace;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.rotating {
+  animation: rotate 1s ease-in-out;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
