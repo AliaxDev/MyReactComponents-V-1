@@ -12,9 +12,9 @@ function FollowCardList() {
     },
     {
       id: "0022",
-      url: "https://unavatar.io/jees",
+      url: "https://unavatar.io/leo",
       user: "miguelpz",
-      name: "Miguel Perez",
+      name: "Leonardo Perez",
       isFollow: false
     },
     {
@@ -29,6 +29,13 @@ function FollowCardList() {
       url: "https://unavatar.io/julio",
       user: "pedrogz",
       name: "Julio Espina",
+      isFollow: true
+    },
+    {
+      id: "0044",
+      url: "https://unavatar.io/aliaxdev",
+      user: "aliaxdev",
+      name: "Leandro E.Pérez",
       isFollow: true
     }
   ];

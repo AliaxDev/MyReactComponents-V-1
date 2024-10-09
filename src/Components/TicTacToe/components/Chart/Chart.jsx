@@ -1,8 +1,9 @@
 import "./chart.css";
 
-const Chart = ({ updateBoard, index, children }) => {
+const Chart = ({ updateBoard, index, children, board }) => {
   function handleClick() {
-    updateBoard(index);
+    const newBoard = [...board];
+    updateBoard(index, newBoard);
   }
 
   return (
