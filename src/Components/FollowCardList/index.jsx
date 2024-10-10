@@ -32,7 +32,7 @@ function FollowCardList() {
       isFollow: true
     },
     {
-      id: "0044",
+      id: "0055",
       url: "https://unavatar.io/aliaxdev",
       user: "aliaxdev",
       name: "Leandro E.Pérez",

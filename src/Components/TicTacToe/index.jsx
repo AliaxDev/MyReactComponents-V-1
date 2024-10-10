@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { TURN_PLAYER } from "./constants";
 import { resetGameStorage, saveGameToStorage } from "./logic/storage/storage";
 import { saveGameVsStorage, getGameVsStorage } from "./logic/storage/storage";
-import { checkWinner, checkDraw } from "./logic/gameLogic";
+import { checkWinner, checkDraw, checkIfCanWin } from "./logic/gameLogic";
 import confetti from "canvas-confetti";
 import "./styles/index.css";
 
@@ -46,14 +46,25 @@ const TicTacToe = () => {
     if (newBoard[i] || winner) return;
     //if versus PC
     if (vsPC) {
-      //human play
-      humanPlay(i, newBoard);
+      if (turn == TURN_PLAYER.x) {
+        //human play
+        humanPlay(i, newBoard);
+        //check end game
+        checkFinal(newBoard);
+        //set next turn
+        setTurn(TURN_PLAYER.o);
+      }
       const won = checkWinner(newBoard);
       if (!won) {
-        pcPlay(newBoard);
+        //time out
+        setTimeout(() => {
+          pcPlay(newBoard);
+          //check end game
+          checkFinal(newBoard);
+          //set next turn
+          setTurn(TURN_PLAYER.x);
+        }, 1000);
       }
-      //check end game
-      checkFinal(newBoard);
       return;
     }
     //human play and check winner
@@ -108,18 +119,38 @@ const TicTacToe = () => {
   };
 
   const pcPlay = (newBoard) => {
-    //copy board
-    const nullIndexes = newBoard
-      .map((value, index) => (value === null ? index : -1))
-      .filter((e) => e !== -1);
-    //pc gaming position
-    let indexPC = 0;
-    if (nullIndexes.length > 0) {
-      indexPC = nullIndexes[Math.floor(Math.random() * nullIndexes.length)];
+    const options = checkIfCanWin(newBoard);
+
+    //play on the center
+    const isIndexNull = (arr, index) => {
+      return arr.at(index) === null;
+    };
+
+    if (isIndexNull(newBoard, 4)) {
+      newBoard[4] = TURN_PLAYER.o;
+      setBoard(newBoard);
+      return;
     }
-    //add in board
-    newBoard[indexPC] = TURN_PLAYER.o;
-    setBoard(newBoard);
+
+    if (options.length > 0) {
+      const bestOption = options[0];
+      for (let i = 0; i < bestOption.length; i++) {
+        if (bestOption[i].value == 0) {
+          const posi = bestOption[i].i;
+          newBoard[posi] = TURN_PLAYER.o;
+          setBoard(newBoard);
+          return;
+        }
+      }
+    } else {
+      for (let i = 0; i < newBoard.length; i++) {
+        if (newBoard[i] == null) {
+          newBoard[i] = TURN_PLAYER.o;
+          setBoard(newBoard);
+          return;
+        }
+      }
+    }
   };
 
   return (
@@ -141,7 +172,14 @@ const TicTacToe = () => {
 
       <section className="sectionFooter">
         <VsComponent onClick={changeVs} vsPC={vsPC} />
-        <PlayerTurn>{turn}</PlayerTurn>
+        <PlayerTurn
+          board={board}
+          vsPC={vsPC}
+          VerifyTurn={VerifyTurn}
+          turn={turn}
+        >
+          {turn}
+        </PlayerTurn>
         <ResetButton array={board} restartGame={restartGame}>
           {turn}
         </ResetButton>
