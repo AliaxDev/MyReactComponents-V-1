@@ -9,7 +9,7 @@ function PlayerTurn({ children, VerifyTurn, board, turn, vsPC }) {
     <div className="containerPlayerTurn">
       {vsPC ? (
         <h3 className="titlePlayerTurn">
-          {turn == TURN_PLAYER.x ? "Player" : "PC"}:
+          {turn == TURN_PLAYER.x ? "Player" : "PC"}
         </h3>
       ) : (
         <h3 className="titlePlayerTurn">
