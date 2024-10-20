@@ -11,7 +11,7 @@
   font-weight: bold;
 }
 
-.resetButton.disabled {
+.resetButton.disabled-resetButton {
   background-color: transparent;
   color: #fff;
 }

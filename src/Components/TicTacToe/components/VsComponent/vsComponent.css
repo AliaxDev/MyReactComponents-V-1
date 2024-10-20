@@ -39,3 +39,7 @@
   font-size: 14px;
   font-weight: bold;
 }
+
+.vsButton:hover {
+  background-color: #333;
+}

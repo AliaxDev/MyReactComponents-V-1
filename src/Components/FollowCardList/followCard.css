@@ -9,11 +9,6 @@ section
 }
 
 button {
-  padding: 5px 10px;
-  border-radius: 50px;
-  min-width: 4rem;
-  cursor: pointer;
-  font-size: 11px;
 }
 
 article {
@@ -34,6 +29,10 @@ article {
 }
 
 .followCardButton {
+  padding: 5px 10px;
+  min-width: 4rem;
+  font-size: 11px;
+  border-radius: 50px;
   background-color: #33333300;
   color: #fff;
   border: 1px solid #fff;

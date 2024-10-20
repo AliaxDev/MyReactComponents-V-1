@@ -10,6 +10,15 @@
 }
 
 body {
-  max-width: 100vw;
   background-color: #333;
+  margin: 0;
+  padding: 0;
+  padding: 10px;
+}
+
+body.no-pointer {
+  cursor: none;
+}
+button {
+  cursor: crosshair;
 }

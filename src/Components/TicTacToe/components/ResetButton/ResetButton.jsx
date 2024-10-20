@@ -4,7 +4,9 @@ export default function ResetButton({ array, restartGame }) {
   const newBoard = [...array];
   const empty = newBoard.some((element) => element !== null);
 
-  const classResetButton = empty ? "resetButton" : "resetButton disabled";
+  const classResetButton = empty
+    ? "resetButton"
+    : "resetButton disabled-resetButton";
 
   const handleClick = () => {
     restartGame();

@@ -1,0 +1,24 @@
+.appSpace {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 20px;
+}
+
+.sectionApp {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.appItem {
+  background-color: #00000033;
+  border-radius: 10px;
+  /*custom cursor*/
+  /*
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"><rect x="0" y="0" width="30" height="30" fill="red"/></svg>')
+      15 15,
+    auto;
+  */
+}
